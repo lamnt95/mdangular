@@ -1,5 +1,6 @@
 import { Component, VERSION } from '@angular/core';
 import { ApiService } from './api.service';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'my-app',
@@ -21,6 +22,11 @@ export class AppComponent {
   async load() {
     this.loading = true;
     this.res = await this.apiService.getData();
+    this.res = _.sortBy(this.res, 'date');
+    this.res = _.map(this.res, (it: any) => {
+      // it.day = moment(it.date).format('DD/MM/YYYY');
+      return it;
+    });
     this.loading = false;
   }
 
