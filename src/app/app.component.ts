@@ -9,11 +9,14 @@ import { ApiService } from './api.service';
 })
 export class AppComponent {
   name = 'Angular ' + VERSION.major;
-
+  res: any;
+  loading: any = false;
   constructor(private apiService: ApiService) {}
 
   async load() {
+    this.loading = true;
     const res = await this.apiService.getData();
+    this.loading = false;
     console.log(res);
   }
 }

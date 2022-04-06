@@ -1,3 +1,15 @@
-<hello name="{{ name }}"></hello>
-<p>Start editing to see some magic happen :)</p>
 <button (click)="load()">Load</button>
+<div *ngIf="loading">..........</div>
+<div>
+  <table>
+    <tr>
+      <th>Date</th>
+      <th>Name</th>
+    </tr>
+    <tr *ngFor="let resit of res">
+      <td>Alfreds Futterkiste</td>
+      <td>Maria Anders</td>
+    </tr>
+  </table>
+</div>
+<div></div>
