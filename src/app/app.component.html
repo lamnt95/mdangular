@@ -3,6 +3,11 @@
   <span *ngIf="loading">........</span>
 </button>
 
+<button (click)="clhide()">
+  <span *ngIf="!hide">Show</span>
+  <span *ngIf="hide">Hide</span>
+</button>
+
 <div class="block">
   <div class="item">
     <table>

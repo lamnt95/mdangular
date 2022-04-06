@@ -13,6 +13,7 @@ export class AppComponent {
   loading: any = false;
   selected: any = { markdown: '' };
   val: any = '23123123';
+  hide: any = false;
   constructor(private apiService: ApiService) {
     // this.load();
   }
@@ -26,5 +27,9 @@ export class AppComponent {
   choose(resit) {
     this.selected = resit;
     console.log(resit);
+  }
+
+  clhide() {
+    this.hide = !this.hide;
   }
 }
