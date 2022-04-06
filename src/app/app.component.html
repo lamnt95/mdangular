@@ -17,10 +17,15 @@
     </table>
   </div>
   <div class="item2">
-    <textarea
+    <!-- <textarea
       class="textarea"
       disabled
       [value]="this.selected.markdown"
-    ></textarea>
+    ></textarea> -->
+    <markdown
+      id="markdown1"
+      class="variable-binding"
+      [data]="selected.markdown"
+    ></markdown>
   </div>
 </div>

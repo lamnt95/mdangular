@@ -21,10 +21,10 @@ export class AppComponent {
     this.loading = true;
     this.res = await this.apiService.getData();
     this.loading = false;
-    console.log(this.res);
   }
 
   choose(resit) {
     this.selected = resit;
+    console.log(resit);
   }
 }
