@@ -24,6 +24,9 @@ export class AppComponent {
     this.res = await this.apiService.getData();
     this.res = _.sortBy(this.res, 'date');
     this.res = _.map(this.res, (it: any) => {
+      const dt = new Date(_.toNumber(it.date) * 1000);
+      const mth = dt.getMonth() + 1;
+      it.day = dt.getDate() + '--' + mth + '--' + dt.getFullYear();
       return it;
     });
     this.loading = false;
