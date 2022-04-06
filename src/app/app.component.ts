@@ -11,7 +11,7 @@ export class AppComponent {
   name = 'Angular ' + VERSION.major;
   res: any;
   loading: any = false;
-  selected: any = {};
+  selected: any = { markdown: '' };
   val: any = '23123123';
   constructor(private apiService: ApiService) {
     this.load();
