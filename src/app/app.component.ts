@@ -22,11 +22,13 @@ export class AppComponent {
   async load() {
     this.loading = true;
     this.res = await this.apiService.getData();
-    this.res = _.sortBy(this.res, 'date');
+    this.res = this.res.sort(function (a, b) {
+      return a - b;
+    });
     this.res = _.map(this.res, (it: any) => {
       const dt = new Date(_.toNumber(it.date) * 1000);
       const mth = dt.getMonth() + 1;
-      it.day = dt.getDate() + '--' + mth + '--' + dt.getFullYear();
+      it.day = dt.getDate() + '-' + mth + '-' + dt.getFullYear();
       it.name = it.day + ' ' + it.name;
       return it;
     });
