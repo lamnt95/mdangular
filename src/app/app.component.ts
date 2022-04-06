@@ -11,7 +11,7 @@ export class AppComponent {
   name = 'Angular ' + VERSION.major;
   res: any;
   loading: any = false;
-  selected: any;
+  selected: any = {};
   constructor(private apiService: ApiService) {}
 
   async load() {
