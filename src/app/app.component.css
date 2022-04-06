@@ -20,6 +20,6 @@ tr:nth-child(even) {
 }
 
 .active {
-  background-color: #1bd158;
+  background-color: rgb(233 203 128);
   color: #fff;
 }
