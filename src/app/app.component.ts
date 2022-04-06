@@ -24,7 +24,6 @@ export class AppComponent {
     this.res = await this.apiService.getData();
     this.res = _.sortBy(this.res, 'date');
     this.res = _.map(this.res, (it: any) => {
-      // it.day = moment(it.date).format('DD/MM/YYYY');
       return it;
     });
     this.loading = false;
