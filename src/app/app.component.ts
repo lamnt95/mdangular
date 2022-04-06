@@ -12,7 +12,10 @@ export class AppComponent {
   res: any;
   loading: any = false;
   selected: any = {};
-  constructor(private apiService: ApiService) {}
+  val: any = '23123123';
+  constructor(private apiService: ApiService) {
+    this.load();
+  }
 
   async load() {
     this.loading = true;

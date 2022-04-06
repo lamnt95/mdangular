@@ -1,18 +1,22 @@
-<button (click)="load()">Load</button>
+<!-- <button (click)="load()">Load</button> -->
 <div *ngIf="loading">..........</div>
-<div>
-  <table>
-    <tr>
-      <th>Name</th>
-    </tr>
-    <tr *ngFor="let resit of res">
-      <td
-        (click)="choose(resit)"
-        [ngClass]="{ active: resit.id == selected.id }"
-      >
-        <a [href]="resit.link">{{ resit.name }}</a>
-      </td>
-    </tr>
-  </table>
+<div class="block">
+  <div class="item">
+    <table>
+      <tr>
+        <th>Name</th>
+      </tr>
+      <tr *ngFor="let resit of res">
+        <td
+          (click)="choose(resit)"
+          [ngClass]="{ active: resit.id == selected.id }"
+        >
+          <a [href]="resit.link">{{ resit.name }}</a>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="item2">
+    <textarea class="textarea" disabled [value]="val"></textarea>
+  </div>
 </div>
-<div></div>
