@@ -25,10 +25,11 @@ tr:nth-child(even) {
 }
 
 .block {
-  /* display: flex; */
+  display: block;
 }
 
 .item {
+  display: inline-block;
   width: 50%;
   max-width: 50%;
   max-height: 900px !important;
@@ -36,6 +37,11 @@ tr:nth-child(even) {
 }
 
 .item2 {
+  display: inline-block;
+  width: 50%;
+  max-width: 50%;
+  max-height: 900px !important;
+  overflow: scroll;
 }
 
 .textarea {
