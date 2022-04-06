@@ -3,12 +3,15 @@
 <div>
   <table>
     <tr>
-      <th>Date</th>
       <th>Name</th>
     </tr>
     <tr *ngFor="let resit of res">
-      <td>Alfreds Futterkiste</td>
-      <td>Maria Anders</td>
+      <td
+        (click)="choose(resit)"
+        [ngClass]="{ active: resit.id == selected.id }"
+      >
+        <a [href]="resit.link">{{ resit.name }}</a>
+      </td>
     </tr>
   </table>
 </div>

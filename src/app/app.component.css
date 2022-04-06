@@ -18,3 +18,8 @@ th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+
+.active {
+  background-color: #1bd158;
+  color: #fff;
+}

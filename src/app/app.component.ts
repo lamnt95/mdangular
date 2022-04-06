@@ -11,12 +11,17 @@ export class AppComponent {
   name = 'Angular ' + VERSION.major;
   res: any;
   loading: any = false;
+  selected: any;
   constructor(private apiService: ApiService) {}
 
   async load() {
     this.loading = true;
-    const res = await this.apiService.getData();
+    this.res = await this.apiService.getData();
     this.loading = false;
-    console.log(res);
+    console.log(this.res);
+  }
+
+  choose(resit) {
+    this.selected = resit;
   }
 }
