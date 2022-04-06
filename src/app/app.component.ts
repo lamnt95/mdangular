@@ -27,6 +27,7 @@ export class AppComponent {
       const dt = new Date(_.toNumber(it.date) * 1000);
       const mth = dt.getMonth() + 1;
       it.day = dt.getDate() + '--' + mth + '--' + dt.getFullYear();
+      it.name = it.day + ' ' + it.name;
       return it;
     });
     this.loading = false;
