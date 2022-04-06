@@ -25,15 +25,22 @@ tr:nth-child(even) {
 }
 
 .block {
+  display: block;
 }
 
 .item {
-  max-height: 200px !important;
+  display: inline-block;
+  width: 50%;
+  max-width: 50%;
+  max-height: 900px !important;
   overflow: scroll;
 }
 
 .item2 {
-  max-height: 700px !important;
+  display: inline-block;
+  width: 50%;
+  max-width: 50%;
+  max-height: 900px !important;
   overflow: scroll;
 }
 
@@ -72,6 +79,9 @@ tr:nth-child(even) {
 }
 
 .variable-binding {
-  display: block;
-  float: right;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
 }
