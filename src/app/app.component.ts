@@ -21,17 +21,20 @@ export class AppComponent {
 
   async load() {
     this.loading = true;
-    this.res = await this.apiService.getData();
-    this.res = this.res.sort(function (a, b) {
-      return a - b;
-    });
-    this.res = _.map(this.res, (it: any) => {
-      const dt = new Date(_.toNumber(it.date) * 1000);
-      const mth = dt.getMonth() + 1;
-      it.day = dt.getDate() + '-' + mth + '-' + dt.getFullYear();
-      it.name = it.day + ' ' + it.name;
+    const a = await this.apiService.getData();
+    const b = _.map(a, (it: any) => {
+      it.updateDate = new Date(it.date * 1000);
+      const month = it.updateDate.getMonth() + 1;
+      const year = it.updateDate.getFullYear();
+      it.updateDateStr = it.updateDate.getDate() + '-' + month + '-' + year;
+
+      it.name = it.updateDateStr + ' ' + it.name;
       return it;
     });
+
+    const c = _.sortBy(b, ['updateDate']);
+    this.res = _.reverse(c);
+
     this.loading = false;
   }
 
