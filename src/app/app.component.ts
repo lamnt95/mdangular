@@ -14,7 +14,7 @@ export class AppComponent {
   selected: any = { markdown: '' };
   val: any = '23123123';
   constructor(private apiService: ApiService) {
-    this.load();
+    // this.load();
   }
 
   async load() {

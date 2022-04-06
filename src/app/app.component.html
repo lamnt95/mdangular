@@ -1,4 +1,4 @@
-<!-- <button (click)="load()">Load</button> -->
+<button (click)="load()">Load</button>
 <div *ngIf="loading">..........</div>
 <div class="block">
   <div class="item">
@@ -22,10 +22,6 @@
       disabled
       [value]="this.selected.markdown"
     ></textarea> -->
-    <markdown
-      id="markdown1"
-      class="variable-binding"
-      [data]="selected.markdown"
-    ></markdown>
+    <markdown class="variable-binding" [data]="selected.markdown"></markdown>
   </div>
 </div>
