@@ -1,5 +1,8 @@
-<button (click)="load()">Load</button>
-<div *ngIf="loading">..........</div>
+<button (click)="load()">
+  <span *ngIf="!loading">Load</span>
+  <span *ngIf="loading">........</span>
+</button>
+
 <div class="block">
   <div class="item">
     <table>
