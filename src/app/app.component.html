@@ -4,12 +4,12 @@
 </button>
 
 <button (click)="clhide()">
-  <span *ngIf="!hide">Show</span>
-  <span *ngIf="hide">Hide</span>
+  <span *ngIf="!hide">Hide</span>
+  <span *ngIf="hide">Show</span>
 </button>
 
 <div class="block">
-  <div class="item">
+  <div class="item" *ngIf="!hide">
     <table>
       <tr>
         <th>Name</th>
