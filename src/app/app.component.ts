@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
     // this.load();
   }
   ngOnInit(): void {
-    // this.load();
+    this.load();
     setInterval(() => {
       this.isValid = false;
     }, 600000);
@@ -42,12 +42,7 @@ export class AppComponent implements OnInit {
 
   async fetch() {
     this.loading = true;
-    const timepout = setInterval(() => {
-      this.loadper = this.loadper + 3;
-    }, 1000);
     const a = await this.apiService.fetch();
-    this.loadper = 0;
-    clearInterval(timepout);
     this.loading = false;
   }
 
