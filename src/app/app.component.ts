@@ -55,7 +55,7 @@ export class AppComponent implements OnInit {
       const year = it.updateDate.getFullYear();
       it.updateDateStr = it.updateDate.getDate() + '-' + month + '-' + year;
 
-      it.name = it.updateDateStr + ' ' + it.name;
+      // it.name = it.updateDateStr + ' ' + it.name;
       return it;
     });
 
