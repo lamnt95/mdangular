@@ -16,6 +16,7 @@ export class AppComponent implements OnInit {
   selected: any = { markdown: '' };
   val: any = '23123123';
   hide: any = false;
+  loadper: any = 0;
   constructor(private apiService: ApiService) {
     // this.load();
   }
@@ -31,7 +32,12 @@ export class AppComponent implements OnInit {
 
   async load() {
     this.loading = true;
+    const timepout = setInterval(() => {
+      this.loadper = this.loadper + 1;
+    }, 1000);
     const a = await this.apiService.getData();
+    this.loadper = 0;
+    clearInterval(timepout);
     const b = _.map(a, (it: any) => {
       it.updateDate = new Date(it.date * 1000);
       const month = it.updateDate.getMonth() + 1;
