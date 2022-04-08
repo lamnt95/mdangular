@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
     // this.load();
   }
   ngOnInit(): void {
-    this.load();
+    // this.load();
     setInterval(() => {
       this.isValid = false;
     }, 600000);
