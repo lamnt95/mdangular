@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
     // this.load();
   }
   ngOnInit(): void {
-    // this.load();
+    this.load();
   }
 
   async fetch() {
