@@ -28,6 +28,7 @@
           [ngClass]="{ active: resit.id == selected.id }"
         >
           <a [href]="resit.link">{{ resit.name }}</a>
+          <span style="float: right">{{ resit.articleType }}</span>
         </td>
       </tr>
     </table>
