@@ -1,53 +1,66 @@
-<!-- <button (click)="fetch()" style="margin-right: 20px">
-  <span *ngIf="!fetching">Fetch</span>
-  <span *ngIf="fetching">........</span>
-</button> -->
+<form *ngIf="!isValid">
+  <input
+    type="text"
+    placeholder="Check key"
+    name="email"
+    required
+    [(ngModel)]="key"
+  />
+  <button type="submit" class="signupbtn" (click)="checkKey()">Check</button>
+</form>
 
-<div style="display: flex;    justify-content: space-between;">
-  <button style="display: flex;" (click)="clhide()">
-    <span *ngIf="!hide">Hide</span>
-    <span *ngIf="hide">Show</span>
-  </button>
+<div *ngIf="isValid">
+  <div style="display: flex;    justify-content: space-between;">
+    <button style="display: flex;" (click)="clhide()">
+      <span *ngIf="!hide">Hide</span>
+      <span *ngIf="hide">Show</span>
+    </button>
 
-  <button style="display: flex;" (click)="fetch()" style="margin-right: 20px">
-    <span *ngIf="!loading">Admin</span>
-    <span *ngIf="loading">........</span>
-  </button>
+    <button
+      *ngIf="isAdmins()"
+      style="display: flex;"
+      (click)="fetch()"
+      style="margin-right: 20px"
+    >
+      <span *ngIf="!loading">Admin</span>
+      <span *ngIf="loading">........</span>
+    </button>
+  </div>
+
+  <br />
+  <br />
+
+  <div class="block">
+    <div class="item" *ngIf="!hide">
+      <table>
+        <tr>
+          <th>Name</th>
+        </tr>
+        <tr *ngFor="let resit of res">
+          <td
+            (click)="choose(resit)"
+            [ngClass]="{ active: resit.id == selected.id }"
+          >
+            <a [href]="resit.link">{{ resit.name }}</a>
+            <span style="float: right">{{ resit.articleType }}</span>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="item2">
+      <markdown class="variable-binding" [data]="selected.markdown"></markdown>
+    </div>
+  </div>
+
+  <ng-template #customLoadingTemplate>
+    <div class="custom-class">
+      <h3>Loading... {{ loadper }}/100</h3>
+    </div>
+  </ng-template>
+
+  <ngx-loading
+    [show]="loading"
+    [config]="{ backdropBorderRadius: '3px' }"
+    [template]="customLoadingTemplate"
+  ></ngx-loading>
 </div>
-
-<br />
-<br />
-
-<div class="block">
-  <div class="item" *ngIf="!hide">
-    <table>
-      <tr>
-        <th>Name</th>
-      </tr>
-      <tr *ngFor="let resit of res">
-        <td
-          (click)="choose(resit)"
-          [ngClass]="{ active: resit.id == selected.id }"
-        >
-          <a [href]="resit.link">{{ resit.name }}</a>
-          <span style="float: right">{{ resit.articleType }}</span>
-        </td>
-      </tr>
-    </table>
-  </div>
-  <div class="item2">
-    <markdown class="variable-binding" [data]="selected.markdown"></markdown>
-  </div>
-</div>
-
-<ng-template #customLoadingTemplate>
-  <div class="custom-class">
-    <h3>Loading... {{ loadper }}/100</h3>
-  </div>
-</ng-template>
-
-<ngx-loading
-  [show]="loading"
-  [config]="{ backdropBorderRadius: '3px' }"
-  [template]="customLoadingTemplate"
-></ngx-loading>

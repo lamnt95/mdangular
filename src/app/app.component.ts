@@ -1,6 +1,7 @@
 import { Component, OnInit, VERSION } from '@angular/core';
 import { ApiService } from './api.service';
 import * as _ from 'lodash';
+import { keys, admins } from './user';
 
 @Component({
   selector: 'my-app',
@@ -11,17 +12,19 @@ import * as _ from 'lodash';
 export class AppComponent implements OnInit {
   name = 'Angular ' + VERSION.major;
   res: any;
+  key: any;
   loading: any = false;
   fetching: any = false;
   selected: any = { markdown: '' };
   val: any = '23123123';
   hide: any = false;
   loadper: any = 0;
+  isValid: any = false;
   constructor(private apiService: ApiService) {
     // this.load();
   }
   ngOnInit(): void {
-    this.load();
+    // this.load();
   }
 
   async fetch() {
@@ -66,5 +69,17 @@ export class AppComponent implements OnInit {
 
   clhide() {
     this.hide = !this.hide;
+  }
+
+  checkKey() {
+    if (_.includes(keys, this.key) || _.includes(admins, this.key)) {
+      this.isValid = true;
+    } else {
+      this.isValid = false;
+    }
+  }
+
+  isAdmins() {
+    return _.includes(admins, this.key);
   }
 }
