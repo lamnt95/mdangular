@@ -35,6 +35,11 @@ export class AppComponent implements OnInit {
     console.log(a);
   }
 
+  async setCache() {
+    const a = await this.apiService.setCache();
+    console.log(a);
+  }
+
   async fetch() {
     this.loading = true;
     const timepout = setInterval(() => {
