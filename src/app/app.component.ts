@@ -53,12 +53,7 @@ export class AppComponent implements OnInit {
 
   async load() {
     this.loading = true;
-    const timepout = setInterval(() => {
-      this.loadper = this.loadper + 1;
-    }, 1000);
-    const a = await this.apiService.getData();
-    this.loadper = 0;
-    clearInterval(timepout);
+    const a = await this.apiService.getAll2();
     const b = _.map(a, (it: any) => {
       it.updateDate = new Date(it.date * 1000);
       const month = it.updateDate.getMonth() + 1;
@@ -75,9 +70,10 @@ export class AppComponent implements OnInit {
     this.loading = false;
   }
 
-  choose(resit) {
-    this.selected = resit;
-    console.log(resit);
+  async choose(resit) {
+    const a = await this.apiService.getOne(resit.id);
+    this.selected = a;
+    console.log(a);
   }
 
   clhide() {

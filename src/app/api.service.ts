@@ -10,6 +10,16 @@ export class ApiService {
     return this.http.get(url).toPromise();
   }
 
+  async getAll2() {
+    const url = 'https://java-crypto.herokuapp.com/post/getAll2';
+    return this.http.get(url).toPromise();
+  }
+
+  async getOne(id) {
+    const url = 'https://java-crypto.herokuapp.com/post/getOne?id=' + id;
+    return this.http.get(url).toPromise();
+  }
+
   async fetch() {
     await this.http
       .get('https://java-crypto.herokuapp.com/post/fetchMessari?limit=10000')
