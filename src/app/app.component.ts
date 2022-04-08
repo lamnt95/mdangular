@@ -24,8 +24,9 @@ export class AppComponent implements OnInit {
   }
 
   async fetch() {
-    this.fetching = true;
-    this.fetching = false;
+    this.loading = true;
+    const a = await this.apiService.fetch();
+    this.loading = false;
   }
 
   async load() {
