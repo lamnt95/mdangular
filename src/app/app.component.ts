@@ -12,11 +12,17 @@ export class AppComponent {
   name = 'Angular ' + VERSION.major;
   res: any;
   loading: any = false;
+  fetching: any = false;
   selected: any = { markdown: '' };
   val: any = '23123123';
   hide: any = false;
   constructor(private apiService: ApiService) {
     // this.load();
+  }
+
+  async fetch() {
+    this.fetching = true;
+    this.fetching = false;
   }
 
   async load() {

@@ -1,12 +1,20 @@
-<button (click)="load()">
+<button (click)="load()" style="margin-right: 20px">
   <span *ngIf="!loading">Load</span>
   <span *ngIf="loading">........</span>
 </button>
+
+<!-- <button (click)="fetch()" style="margin-right: 20px">
+  <span *ngIf="!fetching">Fetch</span>
+  <span *ngIf="fetching">........</span>
+</button> -->
 
 <button (click)="clhide()">
   <span *ngIf="!hide">Hide</span>
   <span *ngIf="hide">Show</span>
 </button>
+
+<br />
+<br />
 
 <div class="block">
   <div class="item" *ngIf="!hide">
