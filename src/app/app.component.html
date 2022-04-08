@@ -1,17 +1,19 @@
-<button (click)="fetch()" style="margin-right: 20px">
-  <span *ngIf="!loading">Fetch</span>
-  <span *ngIf="loading">........</span>
-</button>
-
 <!-- <button (click)="fetch()" style="margin-right: 20px">
   <span *ngIf="!fetching">Fetch</span>
   <span *ngIf="fetching">........</span>
 </button> -->
 
-<button (click)="clhide()">
-  <span *ngIf="!hide">Hide</span>
-  <span *ngIf="hide">Show</span>
-</button>
+<div style="display: flex;    justify-content: space-between;">
+  <button style="display: flex;" (click)="clhide()">
+    <span *ngIf="!hide">Hide</span>
+    <span *ngIf="hide">Show</span>
+  </button>
+
+  <button style="display: flex;" (click)="fetch()" style="margin-right: 20px">
+    <span *ngIf="!loading">Admin</span>
+    <span *ngIf="loading">........</span>
+  </button>
+</div>
 
 <br />
 <br />
