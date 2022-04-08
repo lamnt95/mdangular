@@ -15,4 +15,10 @@ export class ApiService {
       .get('https://java-crypto.herokuapp.com/post/fetchMessari?limit=10000')
       .toPromise();
   }
+
+  async getCache() {
+    await this.http
+      .get('https://java-crypto.herokuapp.com/post/getCache')
+      .toPromise();
+  }
 }
