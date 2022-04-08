@@ -1,4 +1,4 @@
-import { Component, VERSION } from '@angular/core';
+import { Component, OnInit, VERSION } from '@angular/core';
 import { ApiService } from './api.service';
 import * as _ from 'lodash';
 
@@ -8,7 +8,7 @@ import * as _ from 'lodash';
   styleUrls: ['./app.component.css'],
   providers: [ApiService],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   name = 'Angular ' + VERSION.major;
   res: any;
   loading: any = false;
@@ -18,6 +18,9 @@ export class AppComponent {
   hide: any = false;
   constructor(private apiService: ApiService) {
     // this.load();
+  }
+  ngOnInit(): void {
+    this.load();
   }
 
   async fetch() {
