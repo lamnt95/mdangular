@@ -47,7 +47,7 @@
       *ngIf="isShowCreate()"
       (click)="create()"
     >
-      Create
+      New
     </button>
     <button style="margin-right: 10px" *ngIf="isShowSave()" (click)="save()">
       Save
@@ -96,6 +96,7 @@
 
     <div class="item2" *ngIf="isShowCkeditor()">
       <ckeditor
+        id="a9b3d911436184502833d05437b2c4c72"
         [editor]="Editor"
         data="<p>Hello, world!</p>"
         (change)="changeEditor($event)"

@@ -29,3 +29,13 @@ img {
   width: 100% !important;
   max-width: 100% !important;
 }
+
+#a9b3d911436184502833d05437b2c4c72 .ck-editor .ck-editor__main {
+  height: 900px !important;
+}
+
+#a9b3d911436184502833d05437b2c4c72
+  .ck-editor__main
+  .ck-editor__editable_inline {
+  height: 100% !important;
+}
