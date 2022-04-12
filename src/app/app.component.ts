@@ -125,6 +125,9 @@ export class AppComponent implements OnInit {
   }
 
   isCreate: any = false;
+  isShowDefault() {
+    return _.isEmpty(this.selected) && !this.isCreate;
+  }
   isShowCreate() {
     return _.isEmpty(this.selected) && !this.isCreate;
   }
@@ -143,7 +146,11 @@ export class AppComponent implements OnInit {
   }
 
   isShowPreview() {
-    return !_.isEmpty(this.selected);
+    return !_.isEmpty(this.selected) && !this.isCreate;
+  }
+
+  isShowCkeditor() {
+    return this.isCreate;
   }
 
   isShowUpload() {
@@ -165,4 +172,8 @@ export class AppComponent implements OnInit {
     this.selected = {};
   }
   upload() {}
+
+  changeEditor(e) {
+    console.log(e, _.get(e, 'target.value'));
+  }
 }
