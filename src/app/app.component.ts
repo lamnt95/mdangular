@@ -2,12 +2,13 @@ import { Component, OnInit, VERSION } from '@angular/core';
 import { ApiService } from './api.service';
 import * as _ from 'lodash';
 import { keys, admins } from './user';
+import { MessageService } from 'primeng/components/common/messageservice';
 
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [ApiService],
+  providers: [ApiService, MessageService],
 })
 export class AppComponent implements OnInit {
   name = 'Angular ' + VERSION.major;
@@ -21,7 +22,7 @@ export class AppComponent implements OnInit {
   hide: any = false;
   loadper: any = 0;
   isValid: any = false;
-  constructor(private apiService: ApiService) {
+  constructor(private apiService: ApiService, private mgSv: MessageService) {
     // this.load();
   }
   cates: any = ['Messari', 'MessariPro', 'Manual'];
@@ -140,7 +141,6 @@ export class AppComponent implements OnInit {
   }
 
   isShowPreview() {
-    console.log('isShowPreview', this.selected, !_.isEmpty(this.selected));
     return !_.isEmpty(this.selected);
   }
 
@@ -152,6 +152,8 @@ export class AppComponent implements OnInit {
     this.isCreate = true;
   }
   save() {
+    console.log('save');
+    this.renScs('success');
     this.isEdit = false;
   }
   edit() {
@@ -163,4 +165,40 @@ export class AppComponent implements OnInit {
     this.selected = {};
   }
   upload() {}
+
+  renErr(msg) {
+    this.mgSv.clear();
+    this.mgSv.add({
+      detail: msg,
+      severity: 'error',
+      summary: 'Thông báo',
+    });
+    this.clrMsg();
+  }
+
+  renScs(msg) {
+    this.mgSv.clear();
+    this.mgSv.add({
+      detail: msg,
+      severity: 'success',
+      summary: 'Thông báo',
+    });
+    this.clrMsg();
+  }
+
+  renWrn(msg) {
+    this.mgSv.clear();
+    this.mgSv.add({
+      detail: msg,
+      severity: 'warn',
+      summary: 'Thông báo',
+    });
+    this.clrMsg();
+  }
+
+  clrMsg() {
+    setTimeout(() => {
+      this.mgSv.clear();
+    }, 4000);
+  }
 }
