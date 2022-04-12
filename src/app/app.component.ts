@@ -78,7 +78,7 @@ export class AppComponent implements OnInit {
     const ait = await this.apiService.getOne(id);
     this.selected = ait;
     if (this.selected.docType == 'html') {
-      this.selected.dateStr = this.toStrDate(this.selected.date);
+      this.selected.dateStr = this.toStrDate2(this.selected.date);
     }
     this.loading = false;
   }
@@ -88,7 +88,7 @@ export class AppComponent implements OnInit {
     const a = await this.apiService.getOne(resit.i);
     this.selected = a;
     if (this.selected.docType == 'html') {
-      this.selected.dateStr = this.toStrDate(this.selected.date);
+      this.selected.dateStr = this.toStrDate2(this.selected.date);
     }
     this.loading = false;
   }
@@ -289,6 +289,20 @@ export class AppComponent implements OnInit {
   };
 
   toStrDate(a: Date) {
+    let m: any = a.getMonth() + 1;
+    if (m < 10) {
+      m = `0${m}`;
+    }
+
+    let d: any = a.getDate();
+    if (d < 10) {
+      d = `0${m}`;
+    }
+    return `${a.getFullYear()}-${m}-${d}`;
+  }
+
+  toStrDate2(b) {
+    const a = new Date(b * 1000);
     let m: any = a.getMonth() + 1;
     if (m < 10) {
       m = `0${m}`;
