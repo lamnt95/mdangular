@@ -129,7 +129,7 @@ export class AppComponent implements OnInit {
     return _.isEmpty(this.selected) && !this.isCreate;
   }
   isShowCreate() {
-    return _.isEmpty(this.selected) && !this.isCreate;
+    return !this.isCreate;
   }
 
   isEdit: any = false;
@@ -158,13 +158,19 @@ export class AppComponent implements OnInit {
   }
 
   create() {
+    this.selected = {};
+    this.isEdit = false;
     this.isCreate = true;
   }
+
+  toCreate() {}
+
   save() {
     this.isEdit = false;
   }
   edit() {
     this.isEdit = true;
+    this.isCreate = false;
   }
   back() {
     this.isEdit = false;
