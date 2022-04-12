@@ -3,6 +3,7 @@ import { ApiService } from './api.service';
 import * as _ from 'lodash';
 import { keys, admins } from './user';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'my-app',
@@ -174,7 +175,7 @@ export class AppComponent implements OnInit {
       name: null,
       slug: null,
       source: 'manual',
-      srcId: null,
+      srcId: uuidv4(),
     };
   }
 
