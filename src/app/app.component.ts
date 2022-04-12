@@ -56,6 +56,8 @@ export class AppComponent implements OnInit {
       it.updateDateStr = dt.getDate() + '-' + month + '-' + year;
       if (it.a == 'ENTERPRISE_RESEARCH' || it.a == 'PRO_RESEARCH') {
         it.a = 'PRO';
+      } else {
+        it.a = '';
       }
       // it.name = it.updateDateStr + ' ' + it.name;
       return it;
