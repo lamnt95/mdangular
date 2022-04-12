@@ -43,4 +43,10 @@ export class ApiService {
       .post('https://java-crypto.herokuapp.com/post/create', req)
       .toPromise();
   }
+
+  async update(req) {
+    return this.http
+      .put('https://java-crypto.herokuapp.com/post/update', req)
+      .toPromise();
+  }
 }
