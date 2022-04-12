@@ -53,7 +53,7 @@ export class AppComponent implements OnInit {
     this.loading = false;
   }
 
-  async load() {
+  async load(isUpdateReq: any = null) {
     this.loading = true;
     const a = await this.apiService.getAll2();
     const b = _.map(a, (it: any) => {
@@ -74,12 +74,21 @@ export class AppComponent implements OnInit {
     this.res = _.reverse(c);
     this.res2 = this.res;
 
-    const id = _.get(this.res2, '0.i');
-    const ait = await this.apiService.getOne(id);
-    this.selected = ait;
-    if (this.selected.docType == 'html') {
-      this.selected.dateStr = this.toStrDate2(this.selected.date);
+    if (isUpdateReq == null) {
+      const id = _.get(this.res2, '0.i');
+      const ait = await this.apiService.getOne(id);
+      this.selected = ait;
+      if (this.selected.docType == 'html') {
+        this.selected.dateStr = this.toStrDate2(this.selected.date);
+      }
+    } else {
+      const ait = await this.apiService.getOne(isUpdateReq.id);
+      this.selected = ait;
+      if (this.selected.docType == 'html') {
+        this.selected.dateStr = this.toStrDate2(this.selected.date);
+      }
     }
+
     this.loading = false;
   }
 
@@ -234,8 +243,7 @@ export class AppComponent implements OnInit {
     this.apiService
       .update(this.selected)
       .then(() => {
-        this.load().then(() => {
-          this.selected = {};
+        this.load(this.selected).then(() => {
           this.isEdit = false;
           this.isCreate = false;
         });
