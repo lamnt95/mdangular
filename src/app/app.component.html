@@ -31,6 +31,20 @@
   </div>
 
   <br />
+
+  <div>
+    <select
+      style="margin-right: 10px"
+      [(ngModel)]="cateActive"
+      (change)="changeOptions($event)"
+    >
+      <option value="Messari">Messari</option>
+      <option value="MessariPro">MessariPro</option>
+      <option value="Manual">Manual</option>
+    </select>
+    <button>Create</button>
+  </div>
+
   <br />
 
   <div class="block">

@@ -23,6 +23,7 @@ export class AppComponent implements OnInit {
   constructor(private apiService: ApiService) {
     // this.load();
   }
+  cates: any = ['Messari', 'MessariPro', 'Manual'];
   ngOnInit(): void {
     this.load();
     setInterval(() => {
@@ -90,5 +91,22 @@ export class AppComponent implements OnInit {
 
   isAdmins() {
     return _.includes(admins, this.key);
+  }
+
+  cateActive: any = 'Messari';
+
+  changeOptions(e) {
+    console.log(e);
+    const val = _.get(e, 'target.value');
+    switch (val) {
+      case 'Messari':
+        break;
+      case 'MessariPro':
+        break;
+      case 'Manual':
+        break;
+      default:
+        break;
+    }
   }
 }
