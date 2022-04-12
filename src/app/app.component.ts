@@ -136,6 +136,7 @@ export class AppComponent implements OnInit {
   }
 
   isShowPreview() {
+    console.log('isShowPreview', this.selected, !_.isEmpty(this.selected));
     return !_.isEmpty(this.selected);
   }
 

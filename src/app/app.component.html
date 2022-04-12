@@ -87,13 +87,8 @@
         </tr>
       </table>
     </div>
-    <div class="item2">
-      <ng-template *ngIf="isShowPreview()">
-        <markdown
-          class="variable-binding"
-          [data]="selected.markdown"
-        ></markdown>
-      </ng-template>
+    <div class="item2" *ngIf="isShowPreview()">
+      <markdown class="variable-binding" [data]="selected.markdown"></markdown>
     </div>
   </div>
 
