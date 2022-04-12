@@ -68,6 +68,7 @@ export class AppComponent implements OnInit {
 
   async choose(resit) {
     this.loading = true;
+    console.log('resit', resit);
     const a = await this.apiService.getOne(resit.i);
     this.selected = a;
     this.loading = false;
