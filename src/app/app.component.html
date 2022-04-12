@@ -133,12 +133,13 @@
         />
       </div>
 
-      <div>
+      <div style=" margin-bottom: 10px;">
         <input
           id="urlimg"
           name="urlimg"
+          [disabled]="!isEdit"
           [(ngModel)]="urlimg"
-          style="width: 40%; margin-bottom: 10px, margin-right: 10px;"
+          style="width: 40%; margin-right: 10px;"
         />
         <button (click)="insertImg()">Insert</button>
       </div>
@@ -177,6 +178,16 @@
           [(ngModel)]="modelCreate.dateStr"
           style="width: 40%; margin-bottom: 10px"
         />
+      </div>
+
+      <div style=" margin-bottom: 10px;">
+        <input
+          id="urlimg"
+          name="urlimg"
+          [(ngModel)]="urlimg"
+          style="width: 40%; margin-right: 10px;"
+        />
+        <button (click)="insertImg()">Insert</button>
       </div>
 
       <ckeditor

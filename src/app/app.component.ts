@@ -275,6 +275,7 @@ export class AppComponent implements OnInit {
       srcId: null,
       docType: 'html',
     };
+    this.urlimg = '';
   }
 
   upload() {}
@@ -335,5 +336,6 @@ export class AppComponent implements OnInit {
     const img = `<img src='${this.urlimg}' />`;
     this.selected.markdown = this.selected.markdown + `<p>${img}</p>`;
     console.log(this.selected);
+    this.urlimg = '';
   }
 }
