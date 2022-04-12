@@ -161,7 +161,17 @@ export class AppComponent implements OnInit {
     this.selected = {};
     this.isEdit = false;
     this.isCreate = true;
-    this.modelCreate = {};
+    this.modelCreate = {
+      articleType: null,
+      date: null,
+      html: null,
+      id: null,
+      link: null,
+      name: null,
+      slug: null,
+      source: 'manual',
+      srcId: null,
+    };
   }
 
   toCreate() {}
@@ -172,14 +182,35 @@ export class AppComponent implements OnInit {
   edit() {
     this.isEdit = true;
     this.isCreate = false;
-    this.modelCreate = {};
+    this.modelCreate = {
+      articleType: null,
+      date: null,
+      html: null,
+      id: null,
+      link: null,
+      name: null,
+      slug: null,
+      source: 'manual',
+      srcId: null,
+    };
   }
   back() {
     this.isEdit = false;
     this.isCreate = false;
     this.selected = {};
-    this.modelCreate = {};
+    this.modelCreate = {
+      articleType: null,
+      date: null,
+      html: null,
+      id: null,
+      link: null,
+      name: null,
+      slug: null,
+      source: 'manual',
+      srcId: null,
+    };
   }
+
   upload() {}
 
   changeEditor() {
@@ -187,5 +218,15 @@ export class AppComponent implements OnInit {
   }
 
   // create
-  modelCreate: any = {};
+  modelCreate: any = {
+    articleType: null,
+    date: null,
+    html: null,
+    id: null,
+    link: null,
+    name: null,
+    slug: null,
+    source: 'manual',
+    srcId: null,
+  };
 }
