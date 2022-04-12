@@ -97,8 +97,8 @@ export class AppComponent implements OnInit {
   cateActive: any = 'All';
 
   changeOptions(e) {
+    this.loading = true;
     const val = _.get(e, 'target.value');
-    console.log(val);
     switch (val) {
       case 'All':
         this.res2 = this.res;
@@ -114,5 +114,6 @@ export class AppComponent implements OnInit {
       default:
         break;
     }
+    this.loading = false;
   }
 }
