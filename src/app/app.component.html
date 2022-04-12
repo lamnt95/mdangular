@@ -95,17 +95,22 @@
     </div>
 
     <div class="item2" *ngIf="isShowCkeditor()">
-      <input
-        placeholder="Name"
-        [(ngModel)]="modelCreate.name"
-        style="width: 40%; margin-bottom: 10px"
-      />
+      <div>
+        <input
+          placeholder="Name"
+          [(ngModel)]="modelCreate.name"
+          style="width: 40%; margin-bottom: 10px"
+        />
+      </div>
 
-      <input
-        placeholder="Link"
-        [(ngModel)]="modelCreate.link"
-        style="width: 40%; margin-bottom: 10px"
-      />
+      <div>
+        <input
+          placeholder="Link"
+          [(ngModel)]="modelCreate.link"
+          style="width: 40%; margin-bottom: 10px"
+        />
+      </div>
+
       <ckeditor
         id="a9b3d911436184502833d05437b2c4c72"
         [editor]="Editor"
