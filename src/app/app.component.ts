@@ -168,7 +168,7 @@ export class AppComponent implements OnInit {
     this.isCreate = true;
     this.modelCreate = {
       articleType: null,
-      date: null,
+      date: this.toStrDate(new Date()),
       html: null,
       id: null,
       link: null,
@@ -255,4 +255,17 @@ export class AppComponent implements OnInit {
     srcId: null,
     docType: 'html',
   };
+
+  toStrDate(a: Date) {
+    let m: any = a.getMonth() + 1;
+    if (m < 10) {
+      m = `0${m}`;
+    }
+
+    let d: any = a.getDate();
+    if (d < 10) {
+      d = `0${m}`;
+    }
+    return `${a.getFullYear()}-${m}-${d}`;
+  }
 }

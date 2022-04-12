@@ -85,7 +85,9 @@
         <tr *ngFor="let resit of res2">
           <td
             (click)="choose(resit)"
-            [ngClass]="{ active: resit.i == selected.id }"
+            [ngClass]="{
+              active: resit.i == selected.i || resit.i == selected.id
+            }"
           >
             <span style="margin-right: 20px">{{ resit.updateDateStr }}</span>
             <a [href]="resit.link">{{ resit.n }}</a>
