@@ -63,6 +63,8 @@ export class AppComponent implements OnInit {
       it.updateDateStr = it.udt.getDate() + '-' + month + '-' + year;
       if (it.a == '1') {
         it.a = 'PRO';
+      } else if (it.s == 'manual') {
+        it.a = 'MANUAL';
       } else {
         it.a = '';
       }
