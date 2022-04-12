@@ -50,7 +50,7 @@ export class AppComponent implements OnInit {
     this.loading = true;
     const a = await this.apiService.getAll2();
     const b = _.map(a, (it: any) => {
-      it.updateDate = new Date(it.date * 1000);
+      it.updateDate = new Date(it.d * 1000);
       const month = it.updateDate.getMonth() + 1;
       const year = it.updateDate.getFullYear();
       it.updateDateStr = it.updateDate.getDate() + '-' + month + '-' + year;
@@ -67,7 +67,7 @@ export class AppComponent implements OnInit {
 
   async choose(resit) {
     this.loading = true;
-    const a = await this.apiService.getOne(resit.id);
+    const a = await this.apiService.getOne(resit.i);
     this.selected = a;
     this.loading = false;
 
