@@ -42,7 +42,29 @@
       <option value="Messari">Messari</option>
       <option value="Manual">Manual</option>
     </select>
-    <button>Create</button>
+    <button
+      style="margin-right: 10px"
+      *ngIf="isShowCreate()"
+      (click)="create()"
+    >
+      Create
+    </button>
+    <button style="margin-right: 10px" *ngIf="isShowSave()" (click)="save()">
+      Save
+    </button>
+    <button style="margin-right: 10px" *ngIf="isShowEdit()" (click)="edit()">
+      Edit
+    </button>
+    <button style="margin-right: 10px" *ngIf="isShowBack()" (click)="back()">
+      Back
+    </button>
+    <button
+      style="margin-right: 10px"
+      *ngIf="isShowUpload()"
+      (click)="upload()"
+    >
+      Upload
+    </button>
   </div>
 
   <br />
@@ -66,7 +88,12 @@
       </table>
     </div>
     <div class="item2">
-      <markdown class="variable-binding" [data]="selected.markdown"></markdown>
+      <ng-template *ngIf="isShowPreview()">
+        <markdown
+          class="variable-binding"
+          [data]="selected.markdown"
+        ></markdown>
+      </ng-template>
     </div>
   </div>
 

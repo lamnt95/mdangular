@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   key: any;
   loading: any = false;
   fetching: any = false;
-  selected: any = { markdown: '' };
+  selected: any = {};
   val: any = '23123123';
   hide: any = false;
   loadper: any = 0;
@@ -116,4 +116,46 @@ export class AppComponent implements OnInit {
     }
     this.loading = false;
   }
+
+  isCreate: any = false;
+  isShowCreate() {
+    return _.isEmpty(this.selected) && !this.isCreate;
+  }
+
+  isEdit: any = false;
+  isShowEdit() {
+    return !_.isEmpty(this.selected) && !this.isEdit;
+  }
+
+  isShowSave() {
+    return !_.isEmpty(this.selected) && this.isEdit;
+  }
+
+  isShowBack() {
+    return !_.isEmpty(this.selected) || this.isCreate;
+  }
+
+  isShowPreview() {
+    return !_.isEmpty(this.selected);
+  }
+
+  isShowUpload() {
+    return true;
+  }
+
+  create() {
+    this.isCreate = true;
+  }
+  save() {
+    this.isEdit = false;
+  }
+  edit() {
+    this.isEdit = true;
+  }
+  back() {
+    this.isEdit = false;
+    this.isCreate = false;
+    this.selected = {};
+  }
+  upload() {}
 }
