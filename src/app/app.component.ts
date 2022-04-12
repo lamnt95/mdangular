@@ -84,6 +84,9 @@ export class AppComponent implements OnInit {
     this.loading = true;
     const a = await this.apiService.getOne(resit.i);
     this.selected = a;
+    if ((this.selected.docType = 'html')) {
+      this.selected.dateStr = this.toStrDate(this.selected.date);
+    }
     this.loading = false;
   }
 
@@ -148,11 +151,19 @@ export class AppComponent implements OnInit {
   }
 
   isShowPreview() {
-    return !_.isEmpty(this.selected) && !this.isCreate;
+    return (
+      !_.isEmpty(this.selected) &&
+      !this.isCreate &&
+      this.selected.docType == null
+    );
   }
 
   isShowCkeditor() {
     return this.isCreate;
+  }
+
+  isShowCkeditorEdit() {
+    return !_.isEmpty(this.selected) && this.selected.docType == 'html';
   }
 
   isShowUpload() {

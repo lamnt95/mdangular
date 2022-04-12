@@ -103,6 +103,41 @@
       <markdown class="variable-binding" [data]="selected.markdown"></markdown>
     </div>
 
+    <div class="item2" *ngIf="isShowCkeditorEdit()">
+      <div>
+        <input
+          placeholder="Name"
+          [(ngModel)]="selected.name"
+          style="width: 40%; margin-bottom: 10px"
+        />
+      </div>
+
+      <div>
+        <input
+          placeholder="Link"
+          [(ngModel)]="selected.link"
+          style="width: 40%; margin-bottom: 10px"
+        />
+      </div>
+
+      <div>
+        <input
+          type="date"
+          id="datepost"
+          name="datepost"
+          [(ngModel)]="selected.dateStr"
+          style="width: 40%; margin-bottom: 10px"
+        />
+      </div>
+
+      <ckeditor
+        id="a9b3d911436184502833d05437b2c4c72"
+        [editor]="Editor"
+        [(ngModel)]="selected.markdown"
+        (change)="changeEditor()"
+      ></ckeditor>
+    </div>
+
     <div class="item2" *ngIf="isShowCkeditor()">
       <div>
         <input
