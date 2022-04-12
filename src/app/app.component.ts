@@ -64,7 +64,7 @@ export class AppComponent implements OnInit {
       if (it.a == '1') {
         it.a = 'PRO';
       } else if (it.s == 'manual') {
-        it.a = 'MANUAL';
+        it.a = 'ME';
       } else {
         it.a = '';
       }
