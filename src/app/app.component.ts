@@ -4,6 +4,7 @@ import * as _ from 'lodash';
 import { keys, admins } from './user';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { v4 as uuidv4 } from 'uuid';
+import { findAllSubstringIndices } from '@angular/cdk/schematics/ng-update/typescript/literal';
 
 @Component({
   selector: 'my-app',
@@ -183,23 +184,34 @@ export class AppComponent implements OnInit {
 
   toCreate() {
     this.modelCreate.date = this.getTime(this.modelCreate.dateStr);
-    console.log(this.modelCreate);
-    this.selected = {};
-    this.isEdit = false;
-    this.isCreate = false;
-    this.modelCreate = {
-      articleType: null,
-      date: null,
-      dateStr: null,
-      html: null,
-      id: null,
-      link: null,
-      name: null,
-      slug: null,
-      source: 'manual',
-      srcId: null,
-      docType: 'html',
-    };
+
+    this.loading = true;
+    this.apiService
+      .create(this.modelCreate)
+      .then(() => {
+        this.load().then(() => {
+          this.selected = {};
+          this.isEdit = false;
+          this.isCreate = false;
+          this.modelCreate = {
+            articleType: null,
+            date: null,
+            dateStr: null,
+            html: null,
+            id: null,
+            link: null,
+            name: null,
+            slug: null,
+            source: 'manual',
+            srcId: null,
+            docType: 'html',
+          };
+        });
+      })
+      .catch((e) => {
+        this.loading = false;
+        console.log(e);
+      });
   }
 
   save() {

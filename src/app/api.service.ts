@@ -37,4 +37,10 @@ export class ApiService {
       .get('https://java-crypto.herokuapp.com/post/setCache')
       .toPromise();
   }
+
+  async create(req) {
+    return this.http
+      .post('https://java-crypto.herokuapp.com/post/create', req)
+      .toPromise();
+  }
 }
