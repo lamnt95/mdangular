@@ -176,6 +176,7 @@ export class AppComponent implements OnInit {
       slug: null,
       source: 'manual',
       srcId: uuidv4(),
+      docType: 'html',
     };
   }
 
@@ -193,6 +194,7 @@ export class AppComponent implements OnInit {
       slug: null,
       source: 'manual',
       srcId: null,
+      docType: 'html',
     };
   }
 
@@ -212,6 +214,7 @@ export class AppComponent implements OnInit {
       slug: null,
       source: 'manual',
       srcId: null,
+      docType: 'html',
     };
   }
   back() {
@@ -228,6 +231,7 @@ export class AppComponent implements OnInit {
       slug: null,
       source: 'manual',
       srcId: null,
+      docType: 'html',
     };
   }
 
@@ -248,5 +252,6 @@ export class AppComponent implements OnInit {
     slug: null,
     source: 'manual',
     srcId: null,
+    docType: 'html',
   };
 }
