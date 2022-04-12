@@ -342,4 +342,11 @@ export class AppComponent implements OnInit {
     console.log(this.selected);
     this.urlimg = '';
   }
+
+  insertImgNew() {
+    const img = `<img src='${this.urlimg}' />`;
+    this.modelCreate.markdown = this.modelCreate.markdown + `<p>${img}</p>`;
+    console.log(this.selected);
+    this.urlimg = '';
+  }
 }
