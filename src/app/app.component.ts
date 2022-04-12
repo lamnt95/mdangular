@@ -77,6 +77,9 @@ export class AppComponent implements OnInit {
     const id = _.get(this.res2, '0.i');
     const ait = await this.apiService.getOne(id);
     this.selected = ait;
+    if ((this.selected.docType = 'html')) {
+      this.selected.dateStr = this.toStrDate(this.selected.date);
+    }
     this.loading = false;
   }
 
