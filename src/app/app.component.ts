@@ -168,7 +168,8 @@ export class AppComponent implements OnInit {
     this.isCreate = true;
     this.modelCreate = {
       articleType: null,
-      date: this.toStrDate(new Date()),
+      date: new Date().getTime() / 1000,
+      dateStr: this.toStrDate(new Date()),
       html: null,
       id: null,
       link: null,
@@ -181,6 +182,7 @@ export class AppComponent implements OnInit {
   }
 
   toCreate() {
+    this.modelCreate.date = this.getTime(this.modelCreate.dateStr);
     console.log(this.modelCreate);
     this.selected = {};
     this.isEdit = false;
@@ -188,6 +190,7 @@ export class AppComponent implements OnInit {
     this.modelCreate = {
       articleType: null,
       date: null,
+      dateStr: null,
       html: null,
       id: null,
       link: null,
@@ -208,6 +211,7 @@ export class AppComponent implements OnInit {
     this.modelCreate = {
       articleType: null,
       date: null,
+      dateStr: null,
       html: null,
       id: null,
       link: null,
@@ -225,6 +229,7 @@ export class AppComponent implements OnInit {
     this.modelCreate = {
       articleType: null,
       date: null,
+      dateStr: null,
       html: null,
       id: null,
       link: null,
@@ -246,6 +251,7 @@ export class AppComponent implements OnInit {
   modelCreate: any = {
     articleType: null,
     date: null,
+    dateStr: null,
     html: null,
     id: null,
     link: null,
@@ -267,5 +273,9 @@ export class AppComponent implements OnInit {
       d = `0${m}`;
     }
     return `${a.getFullYear()}-${m}-${d}`;
+  }
+
+  getTime(a) {
+    return new Date(a).getTime() / 1000;
   }
 }
