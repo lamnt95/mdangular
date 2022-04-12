@@ -133,6 +133,16 @@
         />
       </div>
 
+      <div>
+        <input
+          id="urlimg"
+          name="urlimg"
+          [(ngModel)]="urlimg"
+          style="width: 40%; margin-bottom: 10px, margin-right: 10px;"
+        />
+        <button (click)="insertImg()">Insert</button>
+      </div>
+
       <ckeditor
         [disabled]="!isEdit"
         id="a9b3d911436184502833d05437b2c4c72"

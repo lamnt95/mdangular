@@ -39,3 +39,7 @@ img {
   .ck-editor__editable_inline {
   height: 100% !important;
 }
+
+#a9b3d911436184502833d05437b2c4c72 .ck-editor img {
+  width: 600px !important;
+}

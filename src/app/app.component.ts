@@ -4,7 +4,6 @@ import * as _ from 'lodash';
 import { keys, admins } from './user';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { v4 as uuidv4 } from 'uuid';
-import { findAllSubstringIndices } from '@angular/cdk/schematics/ng-update/typescript/literal';
 
 @Component({
   selector: 'my-app',
@@ -328,5 +327,13 @@ export class AppComponent implements OnInit {
 
   getTime(a) {
     return new Date(a).getTime() / 1000;
+  }
+
+  urlimg: any = '';
+
+  insertImg() {
+    const img = `<img src='${this.urlimg}' />`;
+    this.selected.markdown = this.selected.markdown + `<p>${img}</p>`;
+    console.log(this.selected);
   }
 }
