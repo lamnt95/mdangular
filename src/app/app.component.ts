@@ -157,6 +157,10 @@ export class AppComponent implements OnInit {
     return true;
   }
 
+  isShowToCreate() {
+    return this.isCreate;
+  }
+
   create() {
     this.selected = {};
     this.isEdit = false;
@@ -174,7 +178,22 @@ export class AppComponent implements OnInit {
     };
   }
 
-  toCreate() {}
+  toCreate() {
+    this.selected = {};
+    this.isEdit = false;
+    this.isCreate = false;
+    this.modelCreate = {
+      articleType: null,
+      date: null,
+      html: null,
+      id: null,
+      link: null,
+      name: null,
+      slug: null,
+      source: 'manual',
+      srcId: null,
+    };
+  }
 
   save() {
     this.isEdit = false;

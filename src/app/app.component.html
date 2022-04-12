@@ -49,6 +49,13 @@
     >
       New
     </button>
+    <button
+      style="margin-right: 10px"
+      *ngIf="isShowToCreate()"
+      (click)="toCreate()"
+    >
+      Create
+    </button>
     <button style="margin-right: 10px" *ngIf="isShowSave()" (click)="save()">
       Save
     </button>
