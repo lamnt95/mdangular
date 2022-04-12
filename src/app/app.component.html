@@ -95,11 +95,16 @@
     </div>
 
     <div class="item2" *ngIf="isShowCkeditor()">
+      <input
+        [(ngModel)]="modelCreate.title"
+        style="width: 100%; margin-bottom: 10px"
+      />
+      <br />
       <ckeditor
         id="a9b3d911436184502833d05437b2c4c72"
         [editor]="Editor"
-        data="<p>Hello, world!</p>"
-        (change)="changeEditor($event)"
+        [(ngModel)]="modelCreate.content"
+        (change)="changeEditor()"
       ></ckeditor>
     </div>
   </div>
