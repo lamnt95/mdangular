@@ -2,6 +2,7 @@ import { Component, OnInit, VERSION } from '@angular/core';
 import { ApiService } from './api.service';
 import * as _ from 'lodash';
 import { keys, admins } from './user';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 @Component({
   selector: 'my-app',
@@ -10,6 +11,8 @@ import { keys, admins } from './user';
   providers: [ApiService],
 })
 export class AppComponent implements OnInit {
+  public Editor = ClassicEditor;
+
   name = 'Angular ' + VERSION.major;
   res: any;
   res2: any;
