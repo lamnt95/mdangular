@@ -32,16 +32,16 @@ tr:nth-child(even) {
 
 .item {
   display: inline-block;
-  width: 40%;
-  max-width: 40%;
+  width: 30%;
+  max-width: 30%;
   max-height: 900px !important;
   overflow: scroll;
 }
 
 .item2 {
   display: inline-block;
-  width: 60%;
-  max-width: 60%;
+  width: 70%;
+  max-width: 70%;
   max-height: 900px !important;
   overflow: scroll;
   padding: 10px;
