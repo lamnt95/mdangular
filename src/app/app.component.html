@@ -106,6 +106,7 @@
     <div class="item2" *ngIf="isShowCkeditorEdit()">
       <div>
         <input
+          [disabled]="!isEdit"
           placeholder="Name"
           [(ngModel)]="selected.name"
           style="width: 40%; margin-bottom: 10px"
@@ -114,6 +115,7 @@
 
       <div>
         <input
+          [disabled]="!isEdit"
           placeholder="Link"
           [(ngModel)]="selected.link"
           style="width: 40%; margin-bottom: 10px"
@@ -123,6 +125,7 @@
       <div>
         <input
           type="date"
+          [disabled]="!isEdit"
           id="datepost"
           name="datepost"
           [(ngModel)]="selected.dateStr"
@@ -131,6 +134,7 @@
       </div>
 
       <ckeditor
+        [disabled]="!isEdit"
         id="a9b3d911436184502833d05437b2c4c72"
         [editor]="Editor"
         [(ngModel)]="selected.markdown"
