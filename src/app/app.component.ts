@@ -280,8 +280,12 @@ export class AppComponent implements OnInit {
 
   upload() {}
 
-  changeEditor() {
-    console.log(this.modelCreate);
+  changeEditorNew(e) {
+    console.log(this.modelCreate, e);
+  }
+
+  changeEditorEdit(e) {
+    console.log(this.selected, e);
   }
 
   // create

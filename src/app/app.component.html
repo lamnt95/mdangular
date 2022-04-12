@@ -149,7 +149,7 @@
         id="a9b3d911436184502833d05437b2c4c72"
         [editor]="Editor"
         [(ngModel)]="selected.markdown"
-        (change)="changeEditor()"
+        (change)="changeEditorEdit($event)"
       ></ckeditor>
     </div>
 
@@ -194,7 +194,7 @@
         id="a9b3d911436184502833d05437b2c4c72"
         [editor]="Editor"
         [(ngModel)]="modelCreate.markdown"
-        (change)="changeEditor()"
+        (change)="changeEditorNew($event)"
       ></ckeditor>
     </div>
   </div>
