@@ -12,6 +12,7 @@ import { keys, admins } from './user';
 export class AppComponent implements OnInit {
   name = 'Angular ' + VERSION.major;
   res: any;
+  res2: any;
   key: any;
   loading: any = false;
   fetching: any = false;
@@ -66,7 +67,7 @@ export class AppComponent implements OnInit {
 
     const c = _.sortBy(b, ['udt']);
     this.res = _.reverse(c);
-
+    this.res2 = this.res;
     this.loading = false;
   }
 
@@ -93,17 +94,25 @@ export class AppComponent implements OnInit {
     return _.includes(admins, this.key);
   }
 
-  cateActive: any = 'Messari';
+  cateActive: any = 'All';
 
   changeOptions(e) {
-    console.log(e);
     const val = _.get(e, 'target.value');
+    console.log(val);
     switch (val) {
-      case 'Messari':
+      case 'All':
+        this.res2 = this.res;
         break;
-      case 'MessariPro':
+      case 'Messari':
+        this.selected = {};
+        this.res2 = _.filter(
+          this.res,
+          (it: any = {}) => it.source == 'messari'
+        );
         break;
       case 'Manual':
+        this.selected = {};
+        this.res2 = _.filter(this.res, (it: any = {}) => it.source == 'manual');
         break;
       default:
         break;

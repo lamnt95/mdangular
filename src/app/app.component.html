@@ -38,8 +38,8 @@
       [(ngModel)]="cateActive"
       (change)="changeOptions($event)"
     >
+      <option value="All">All</option>
       <option value="Messari">Messari</option>
-      <option value="MessariPro">MessariPro</option>
       <option value="Manual">Manual</option>
     </select>
     <button>Create</button>
@@ -53,7 +53,7 @@
         <tr>
           <th>Name</th>
         </tr>
-        <tr *ngFor="let resit of res">
+        <tr *ngFor="let resit of res2">
           <td
             (click)="choose(resit)"
             [ngClass]="{ active: resit.i == selected.id }"
