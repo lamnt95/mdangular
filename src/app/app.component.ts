@@ -105,14 +105,11 @@ export class AppComponent implements OnInit {
         break;
       case 'Messari':
         this.selected = {};
-        this.res2 = _.filter(
-          this.res,
-          (it: any = {}) => it.s == 'messari'
-        );
+        this.res2 = _.filter(this.res, (it: any = {}) => it.s == 'messari');
         break;
       case 'Manual':
         this.selected = {};
-        this.res2 = _.filter(this.res, (it: any = {}) => it.source == 'manual');
+        this.res2 = _.filter(this.res, (it: any = {}) => it.s == 'manual');
         break;
       default:
         break;
