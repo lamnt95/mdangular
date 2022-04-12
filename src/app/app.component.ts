@@ -181,6 +181,7 @@ export class AppComponent implements OnInit {
   }
 
   toCreate() {
+    console.log(this.modelCreate);
     this.selected = {};
     this.isEdit = false;
     this.isCreate = false;
