@@ -229,24 +229,25 @@ export class AppComponent implements OnInit {
   }
 
   save() {
-    this.isEdit = false;
+    this.loading = true;
+    this.selected.date = this.getTime(this.selected.dateStr);
+    this.apiService
+      .update(this.selected)
+      .then(() => {
+        this.load().then(() => {
+          this.selected = {};
+          this.isEdit = false;
+          this.isCreate = false;
+        });
+      })
+      .catch((e) => {
+        this.loading = false;
+        console.log(e);
+      });
   }
   edit() {
     this.isEdit = true;
     this.isCreate = false;
-    this.modelCreate = {
-      articleType: null,
-      date: null,
-      dateStr: null,
-      html: null,
-      id: null,
-      link: null,
-      name: null,
-      slug: null,
-      source: 'manual',
-      srcId: null,
-      docType: 'html',
-    };
   }
   back() {
     this.isEdit = false;
