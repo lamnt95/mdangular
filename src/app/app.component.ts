@@ -50,10 +50,10 @@ export class AppComponent implements OnInit {
     this.loading = true;
     const a = await this.apiService.getAll2();
     const b = _.map(a, (it: any) => {
-      const dt = new Date(it.d * 1000);
-      const month = dt.getMonth() + 1;
-      const year = dt.getFullYear();
-      it.updateDateStr = dt.getDate() + '-' + month + '-' + year;
+      it.udt = new Date(it.d * 1000);
+      const month = it.udt.getMonth() + 1;
+      const year = it.udt.getFullYear();
+      it.updateDateStr = it.udt.getDate() + '-' + month + '-' + year;
       if (it.a == 'ENTERPRISE_RESEARCH' || it.a == 'PRO_RESEARCH') {
         it.a = 'PRO';
       } else {
@@ -63,7 +63,7 @@ export class AppComponent implements OnInit {
       return it;
     });
 
-    const c = _.sortBy(b, ['updateDate']);
+    const c = _.sortBy(b, ['udt']);
     this.res = _.reverse(c);
 
     this.loading = false;
