@@ -161,6 +161,7 @@ export class AppComponent implements OnInit {
     this.selected = {};
     this.isEdit = false;
     this.isCreate = true;
+    this.modelCreate = {};
   }
 
   toCreate() {}
@@ -171,15 +172,20 @@ export class AppComponent implements OnInit {
   edit() {
     this.isEdit = true;
     this.isCreate = false;
+    this.modelCreate = {};
   }
   back() {
     this.isEdit = false;
     this.isCreate = false;
     this.selected = {};
+    this.modelCreate = {};
   }
   upload() {}
 
-  changeEditor(e) {
-    console.log(e, _.get(e, 'target.value'));
+  changeEditor() {
+    console.log(this.modelCreate);
   }
+
+  // create
+  modelCreate: any = {};
 }
