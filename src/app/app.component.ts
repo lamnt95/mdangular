@@ -68,6 +68,10 @@ export class AppComponent implements OnInit {
     const c = _.sortBy(b, ['udt']);
     this.res = _.reverse(c);
     this.res2 = this.res;
+
+    const id = _.get(this.res2, '0.i');
+    const ait = await this.apiService.getOne(id);
+    this.selected = ait;
     this.loading = false;
   }
 
