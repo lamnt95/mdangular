@@ -97,7 +97,7 @@ export class AppComponent implements OnInit {
   cateActive: any = 'All';
 
   changeOptions(e) {
-    this.loading = true;
+    this.loading = false;
     const val = _.get(e, 'target.value');
     switch (val) {
       case 'All':
