@@ -2,7 +2,6 @@ import { Component, OnInit, VERSION } from '@angular/core';
 import { ApiService } from './api.service';
 import * as _ from 'lodash';
 import { keys, admins } from './user';
-import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'my-app',
@@ -22,7 +21,7 @@ export class AppComponent implements OnInit {
   hide: any = false;
   loadper: any = 0;
   isValid: any = false;
-  constructor(private apiService: ApiService, private toastr: ToastrService) {
+  constructor(private apiService: ApiService) {
     // this.load();
   }
   cates: any = ['Messari', 'MessariPro', 'Manual'];

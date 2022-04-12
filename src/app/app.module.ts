@@ -7,7 +7,6 @@ import { HelloComponent } from './hello.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MarkdownModule } from 'ngx-markdown';
 import { NgxLoadingModule } from 'ngx-loading';
-import { ToastrModule } from 'ngx-toastr';
 
 import 'prismjs';
 import 'prismjs/components/prism-typescript.min.js';
@@ -20,7 +19,6 @@ import 'prismjs/plugins/line-highlight/prism-line-highlight.js';
     FormsModule,
     HttpClientModule,
     MarkdownModule.forRoot(),
-    ToastrModule.forRoot(),
     NgxLoadingModule.forRoot({}),
   ],
   declarations: [AppComponent, HelloComponent],
