@@ -107,7 +107,7 @@ export class AppComponent implements OnInit {
         this.selected = {};
         this.res2 = _.filter(
           this.res,
-          (it: any = {}) => it.source == 'messari'
+          (it: any = {}) => it.s == 'messari'
         );
         break;
       case 'Manual':
