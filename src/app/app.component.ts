@@ -54,8 +54,8 @@ export class AppComponent implements OnInit {
       const month = it.udt.getMonth() + 1;
       const year = it.udt.getFullYear();
       it.updateDateStr = it.udt.getDate() + '-' + month + '-' + year;
-      if (it.a == 'ENTERPRISE_RESEARCH' || it.a == 'PRO_RESEARCH') {
-        it.a = 'PRO';
+      if (it.a == 1) {
+        it.a = '*';
       } else {
         it.a = '';
       }
