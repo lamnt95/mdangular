@@ -49,11 +49,12 @@ export class AppComponent implements OnInit {
   async load() {
     this.loading = true;
     const a = await this.apiService.getAll2();
+    console.log('getAll2', a);
     const b = _.map(a, (it: any) => {
-      it.updateDate = new Date(it.d * 1000);
-      const month = it.updateDate.getMonth() + 1;
-      const year = it.updateDate.getFullYear();
-      it.updateDateStr = it.updateDate.getDate() + '-' + month + '-' + year;
+      const dt = new Date(it.d * 1000);
+      const month = dt.getMonth() + 1;
+      const year = dt.getFullYear();
+      it.updateDateStr = dt.getDate() + '-' + month + '-' + year;
 
       // it.name = it.updateDateStr + ' ' + it.name;
       return it;
