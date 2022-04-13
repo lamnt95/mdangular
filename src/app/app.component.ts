@@ -36,8 +36,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.myOptions = [
-      { id: 1, name: 'Option 1' },
-      { id: 2, name: 'Option 2' },
+      { id: 'avax', name: 'avax' },
+      { id: 'sol', name: 'sol' },
     ];
 
     this.load();
