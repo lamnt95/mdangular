@@ -349,4 +349,9 @@ export class AppComponent implements OnInit {
     console.log(this.selected);
     this.urlimg = '';
   }
+
+  getUUID() {
+    const a = uuidv4();
+    console.log(a);
+  }
 }
