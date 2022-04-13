@@ -104,13 +104,24 @@
     </div>
 
     <div class="item2" *ngIf="isShowCkeditorEdit()">
-      <div>
-        <input
-          [disabled]="!isEdit"
-          placeholder="Name"
-          [(ngModel)]="selected.name"
-          style="width: 40%; margin-bottom: 10px"
-        />
+      <div
+        style=" margin-bottom: 10px; display: flex;justify-content: space-between;"
+      >
+        <div style="display: flex;width: 50%;">
+          <input
+            [disabled]="!isEdit"
+            placeholder="Name"
+            [(ngModel)]="selected.name"
+            style="width: 40%; margin-bottom: 10px"
+          />
+        </div>
+        <div style="display: flex">
+          <ngx-bootstrap-multiselect
+            [options]="myOptions"
+            [(ngModel)]="optionsModel"
+            (ngModelChange)="onChange()"
+          ></ngx-bootstrap-multiselect>
+        </div>
       </div>
 
       <div>
@@ -150,14 +161,6 @@
           <span style="color: green; margin-right: 10px">{{ uuidStt }}</span>
           <button (click)="getUUID()">UUID</button>
         </div>
-      </div>
-
-      <div style=" margin-bottom: 10px; ">
-        <ngx-bootstrap-multiselect
-          [options]="myOptions"
-          [(ngModel)]="optionsModel"
-          (ngModelChange)="onChange()"
-        ></ngx-bootstrap-multiselect>
       </div>
 
       <ckeditor
