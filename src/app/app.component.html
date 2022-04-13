@@ -133,18 +133,20 @@
         />
       </div>
 
-      <div style=" margin-bottom: 10px;">
-        <div>
+      <div
+        style=" margin-bottom: 10px; display: flex;justify-content: space-between;"
+      >
+        <div style="display: flex;width: 50%;">
           <input
             id="urlimg"
             name="urlimg"
             [disabled]="!isEdit"
             [(ngModel)]="urlimg"
-            style="width: 40%; margin-right: 10px;"
+            style="width: 80%; margin-right: 10px;"
           />
           <button (click)="insertImg()">Insert</button>
         </div>
-        <div>
+        <div style="display: flex">
           <button (click)="getUUID()">UUID</button>
         </div>
       </div>
