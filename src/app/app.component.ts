@@ -4,6 +4,7 @@ import * as _ from 'lodash';
 import { keys, admins } from './user';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { v4 as uuidv4 } from 'uuid';
+import { IMultiSelectOption } from 'ngx-bootstrap-multiselect';
 
 @Component({
   selector: 'my-app',
@@ -29,11 +30,24 @@ export class AppComponent implements OnInit {
     // this.load();
   }
   cates: any = ['Messari', 'MessariPro', 'Manual'];
+
+  optionsModel: number[];
+  myOptions: IMultiSelectOption[];
+
   ngOnInit(): void {
+    this.myOptions = [
+      { id: 1, name: 'Option 1' },
+      { id: 2, name: 'Option 2' },
+    ];
+
     this.load();
     setInterval(() => {
       this.isValid = false;
     }, 600000);
+  }
+
+  onChange() {
+    console.log(this.optionsModel);
   }
 
   async getCache() {

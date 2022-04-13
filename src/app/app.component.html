@@ -152,6 +152,14 @@
         </div>
       </div>
 
+      <div style=" margin-bottom: 10px; ">
+        <ngx-bootstrap-multiselect
+          [options]="myOptions"
+          [(ngModel)]="optionsModel"
+          (ngModelChange)="onChange()"
+        ></ngx-bootstrap-multiselect>
+      </div>
+
       <ckeditor
         [disabled]="!isEdit"
         id="a9b3d911436184502833d05437b2c4c72"

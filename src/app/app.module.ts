@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MarkdownModule } from 'ngx-markdown';
 import { NgxLoadingModule } from 'ngx-loading';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { NgxBootstrapMultiselectModule } from 'ngx-bootstrap-multiselect';
 
 import 'prismjs';
 import 'prismjs/components/prism-typescript.min.js';
@@ -22,6 +23,7 @@ import 'prismjs/plugins/line-highlight/prism-line-highlight.js';
     CKEditorModule,
     MarkdownModule.forRoot(),
     NgxLoadingModule.forRoot({}),
+    NgxBootstrapMultiselectModule,
   ],
   declarations: [AppComponent, HelloComponent],
   bootstrap: [AppComponent],
