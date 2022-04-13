@@ -350,8 +350,13 @@ export class AppComponent implements OnInit {
     this.urlimg = '';
   }
 
+  uuidStt: any = '';
   getUUID() {
     const a = uuidv4();
-    console.log(a);
+    navigator.clipboard.writeText(a);
+    this.uuidStt = 'Done';
+    setTimeout(() => {
+      this.uuidStt = '';
+    }, 3000);
   }
 }
