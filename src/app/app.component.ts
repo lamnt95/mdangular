@@ -38,6 +38,14 @@ export class AppComponent implements OnInit {
     this.myOptions = [
       { id: 'avax', name: 'avax' },
       { id: 'sol', name: 'sol' },
+      { id: 'near', name: 'near' },
+      { id: 'ftm', name: 'ftm' },
+      { id: 'polygon', name: 'polygon' },
+      { id: 'eth', name: 'eth' },
+      { id: 'bnb', name: 'bnb' },
+      { id: 'atom', name: 'atom' },
+      { id: 'cro', name: 'cro' },
+      { id: 'layer2', name: 'layer2' },
     ];
 
     this.load();
