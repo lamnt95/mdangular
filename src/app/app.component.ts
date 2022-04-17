@@ -308,11 +308,11 @@ export class AppComponent implements OnInit {
     this.loading = true;
     this.selected.date = this.getTime(this.selected.dateStr);
     if (
-      this.modelCreate.cateStr != null &&
-      this.modelCreate.cateStr != undefined &&
-      _.size(this.modelCreate.cateStr) > 0
+      this.selected.cateStr != null &&
+      this.selected.cateStr != undefined &&
+      _.size(this.selected.cateStr) > 0
     ) {
-      this.modelCreate.cateStr = JSON.stringify(this.modelCreate.cateStr);
+      this.selected.cateStr = JSON.stringify(this.selected.cateStr);
     }
 
     this.apiService
