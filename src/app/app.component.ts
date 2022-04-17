@@ -254,7 +254,14 @@ export class AppComponent implements OnInit {
 
   toCreate() {
     this.modelCreate.date = this.getTime(this.modelCreate.dateStr);
-    this.modelCreate.cateStr = JSON.stringify(this.modelCreate.cateStr);
+
+    if (
+      this.modelCreate.cateStr != null &&
+      this.modelCreate.cateStr != undefined &&
+      _.size(this.modelCreate.cateStr) > 0
+    ) {
+      this.modelCreate.cateStr = JSON.stringify(this.modelCreate.cateStr);
+    }
 
     console.log(this.modelCreate);
 
@@ -290,6 +297,14 @@ export class AppComponent implements OnInit {
   save() {
     this.loading = true;
     this.selected.date = this.getTime(this.selected.dateStr);
+    if (
+      this.modelCreate.cateStr != null &&
+      this.modelCreate.cateStr != undefined &&
+      _.size(this.modelCreate.cateStr) > 0
+    ) {
+      this.modelCreate.cateStr = JSON.stringify(this.modelCreate.cateStr);
+    }
+
     this.apiService
       .update(this.selected)
       .then(() => {
