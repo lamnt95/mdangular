@@ -123,6 +123,12 @@ export class AppComponent implements OnInit {
 
       if (_.size(this.selected.cateStr) > 0) {
         this.selected.cateStr = JSON.parse(this.selected.cateStr);
+        this.selected.cateStr = _.map(this.selected.cateStr, (i: any) => {
+          let a: any = {};
+          a.id = i;
+          a.name = name;
+          return a;
+        });
       }
 
       if (this.selected.docType == 'html') {
@@ -131,6 +137,17 @@ export class AppComponent implements OnInit {
     } else {
       const ait = await this.apiService.getOne(isUpdateReq.id);
       this.selected = ait;
+
+      if (_.size(this.selected.cateStr) > 0) {
+        this.selected.cateStr = JSON.parse(this.selected.cateStr);
+        this.selected.cateStr = _.map(this.selected.cateStr, (i: any) => {
+          let a: any = {};
+          a.id = i;
+          a.name = name;
+          return a;
+        });
+      }
+
       if (this.selected.docType == 'html') {
         this.selected.dateStr = this.toStrDate2(this.selected.date);
       }
@@ -143,6 +160,17 @@ export class AppComponent implements OnInit {
     this.loading = true;
     const a = await this.apiService.getOne(resit.i);
     this.selected = a;
+
+    if (_.size(this.selected.cateStr) > 0) {
+      this.selected.cateStr = JSON.parse(this.selected.cateStr);
+      this.selected.cateStr = _.map(this.selected.cateStr, (i: any) => {
+        let a: any = {};
+        a.id = i;
+        a.name = name;
+        return a;
+      });
+    }
+
     if (this.selected.docType == 'html') {
       this.selected.dateStr = this.toStrDate2(this.selected.date);
     }
