@@ -123,12 +123,6 @@ export class AppComponent implements OnInit {
 
       if (_.size(this.selected.cateStr) > 0) {
         this.selected.cateStr = JSON.parse(this.selected.cateStr);
-        this.selected.cateStr = _.map(this.selected.cateStr, (i: any) => {
-          let a: any = {};
-          a.id = i;
-          a.name = i;
-          return a;
-        });
       }
 
       if (this.selected.docType == 'html') {
@@ -140,12 +134,6 @@ export class AppComponent implements OnInit {
 
       if (_.size(this.selected.cateStr) > 0) {
         this.selected.cateStr = JSON.parse(this.selected.cateStr);
-        this.selected.cateStr = _.map(this.selected.cateStr, (i: any) => {
-          let a: any = {};
-          a.id = i;
-          a.name = i;
-          return a;
-        });
       }
 
       if (this.selected.docType == 'html') {
@@ -163,12 +151,6 @@ export class AppComponent implements OnInit {
 
     if (_.size(this.selected.cateStr) > 0) {
       this.selected.cateStr = JSON.parse(this.selected.cateStr);
-      this.selected.cateStr = _.map(this.selected.cateStr, (i: any) => {
-        let a: any = {};
-        a.id = i;
-        a.name = i;
-        return a;
-      });
     }
 
     if (this.selected.docType == 'html') {
