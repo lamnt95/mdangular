@@ -126,7 +126,7 @@ export class AppComponent implements OnInit {
         this.selected.cateStr = _.map(this.selected.cateStr, (i: any) => {
           let a: any = {};
           a.id = i;
-          a.name = name;
+          a.name = i;
           return a;
         });
       }
@@ -143,7 +143,7 @@ export class AppComponent implements OnInit {
         this.selected.cateStr = _.map(this.selected.cateStr, (i: any) => {
           let a: any = {};
           a.id = i;
-          a.name = name;
+          a.name = i;
           return a;
         });
       }
@@ -166,7 +166,7 @@ export class AppComponent implements OnInit {
       this.selected.cateStr = _.map(this.selected.cateStr, (i: any) => {
         let a: any = {};
         a.id = i;
-        a.name = name;
+        a.name = i;
         return a;
       });
     }
