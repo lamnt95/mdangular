@@ -70,6 +70,10 @@ export class AppComponent implements OnInit {
     console.log(this.optionsModel);
   }
 
+  onChangeCreate() {
+    console.log(this.modelCreate);
+  }
+
   async getCache() {
     const a = await this.apiService.getCache();
     console.log(a);
@@ -243,33 +247,35 @@ export class AppComponent implements OnInit {
   toCreate() {
     this.modelCreate.date = this.getTime(this.modelCreate.dateStr);
 
-    this.loading = true;
-    this.apiService
-      .create(this.modelCreate)
-      .then(() => {
-        this.load().then(() => {
-          this.selected = {};
-          this.isEdit = false;
-          this.isCreate = false;
-          this.modelCreate = {
-            articleType: null,
-            date: null,
-            dateStr: null,
-            html: null,
-            id: null,
-            link: null,
-            name: null,
-            slug: null,
-            source: 'manual',
-            srcId: null,
-            docType: 'html',
-          };
-        });
-      })
-      .catch((e) => {
-        this.loading = false;
-        console.log(e);
-      });
+    console.log(this.modelCreate);
+
+    // this.loading = true;
+    // this.apiService
+    //   .create(this.modelCreate)
+    //   .then(() => {
+    //     this.load().then(() => {
+    //       this.selected = {};
+    //       this.isEdit = false;
+    //       this.isCreate = false;
+    //       this.modelCreate = {
+    //         articleType: null,
+    //         date: null,
+    //         dateStr: null,
+    //         html: null,
+    //         id: null,
+    //         link: null,
+    //         name: null,
+    //         slug: null,
+    //         source: 'manual',
+    //         srcId: null,
+    //         docType: 'html',
+    //       };
+    //     });
+    //   })
+    //   .catch((e) => {
+    //     this.loading = false;
+    //     console.log(e);
+    //   });
   }
 
   save() {
