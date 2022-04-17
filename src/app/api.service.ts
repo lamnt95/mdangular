@@ -10,6 +10,11 @@ export class ApiService {
     return this.http.get(url).toPromise();
   }
 
+  async getAllCate() {
+    const url = 'https://java-crypto.herokuapp.com/post/getAllCate';
+    return this.http.get(url).toPromise();
+  }
+
   async getAll2() {
     const url = 'https://java-crypto.herokuapp.com/post/getAll2';
     return this.http.get(url).toPromise();

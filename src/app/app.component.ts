@@ -26,6 +26,8 @@ export class AppComponent implements OnInit {
   hide: any = false;
   loadper: any = 0;
   isValid: any = false;
+  cates2: any = [];
+
   constructor(private apiService: ApiService) {
     // this.load();
   }
@@ -52,6 +54,16 @@ export class AppComponent implements OnInit {
     setInterval(() => {
       this.isValid = false;
     }, 600000);
+
+    this.apiService
+      .getAllCate()
+      .then((r: any) => {
+        this.cates2 = r;
+        console.log(r);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
   }
 
   onChange() {
