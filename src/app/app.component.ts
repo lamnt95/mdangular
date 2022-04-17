@@ -120,6 +120,11 @@ export class AppComponent implements OnInit {
       const id = _.get(this.res2, '0.i');
       const ait = await this.apiService.getOne(id);
       this.selected = ait;
+
+      if (_.size(this.selected.cateStr) > 0) {
+        this.selected.cateStr = JSON.parse(this.selected.cateStr);
+      }
+
       if (this.selected.docType == 'html') {
         this.selected.dateStr = this.toStrDate2(this.selected.date);
       }
@@ -253,33 +258,33 @@ export class AppComponent implements OnInit {
 
     console.log(this.modelCreate);
 
-    // this.loading = true;
-    // this.apiService
-    //   .create(this.modelCreate)
-    //   .then(() => {
-    //     this.load().then(() => {
-    //       this.selected = {};
-    //       this.isEdit = false;
-    //       this.isCreate = false;
-    //       this.modelCreate = {
-    //         articleType: null,
-    //         date: null,
-    //         dateStr: null,
-    //         html: null,
-    //         id: null,
-    //         link: null,
-    //         name: null,
-    //         slug: null,
-    //         source: 'manual',
-    //         srcId: null,
-    //         docType: 'html',
-    //       };
-    //     });
-    //   })
-    //   .catch((e) => {
-    //     this.loading = false;
-    //     console.log(e);
-    //   });
+    this.loading = true;
+    this.apiService
+      .create(this.modelCreate)
+      .then(() => {
+        this.load().then(() => {
+          this.selected = {};
+          this.isEdit = false;
+          this.isCreate = false;
+          this.modelCreate = {
+            articleType: null,
+            date: null,
+            dateStr: null,
+            html: null,
+            id: null,
+            link: null,
+            name: null,
+            slug: null,
+            source: 'manual',
+            srcId: null,
+            docType: 'html',
+          };
+        });
+      })
+      .catch((e) => {
+        this.loading = false;
+        console.log(e);
+      });
   }
 
   save() {
