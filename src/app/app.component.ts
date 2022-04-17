@@ -58,7 +58,10 @@ export class AppComponent implements OnInit {
     this.apiService
       .getAllCate()
       .then((r: any) => {
-        this.cates2 = _.map(r, 'name');
+        this.cates2 = _.map(r, (i) => {
+          i.id = i.name;
+          return i;
+        });
         console.log(r);
       })
       .catch((e) => {
