@@ -171,12 +171,21 @@
     </div>
 
     <div class="item2" *ngIf="isShowCkeditor()">
-      <div>
-        <input
-          placeholder="Name"
-          [(ngModel)]="modelCreate.name"
-          style="width: 40%; margin-bottom: 10px"
-        />
+      <div style=" display: flex;justify-content: space-between;">
+        <div style="display: flex;width: 50%;">
+          <input
+            placeholder="Name"
+            [(ngModel)]="modelCreate.name"
+            style="width: 40%; margin-bottom: 10px"
+          />
+        </div>
+        <div style="display: flex">
+          <ngx-bootstrap-multiselect
+            [options]="myOptions"
+            [(ngModel)]="modelCreate.cateStr"
+            (ngModelChange)="onChange()"
+          ></ngx-bootstrap-multiselect>
+        </div>
       </div>
 
       <div>
