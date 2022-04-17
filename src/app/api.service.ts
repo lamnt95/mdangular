@@ -4,54 +4,46 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class ApiService {
   constructor(private http: HttpClient) {}
-
+  url2: any = 'https://java-crypto.herokuapp.com/';
   async getData() {
-    const url = 'https://java-crypto.herokuapp.com/post/getAll';
+    const url = `${this.url2}post/getAll`;
     return this.http.get(url).toPromise();
   }
 
   async getAllCate() {
-    const url = 'https://java-crypto.herokuapp.com/post/getAllCate';
+    const url = `${this.url2}post/getAllCate`;
     return this.http.get(url).toPromise();
   }
 
   async getAll2() {
-    const url = 'https://java-crypto.herokuapp.com/post/getAll2';
+    const url = `${this.url2}post/getAll2`;
     return this.http.get(url).toPromise();
   }
 
   async getOne(id) {
-    const url = 'https://java-crypto.herokuapp.com/post/getOne?id=' + id;
+    const url = `${this.url2}post/getOne?id=` + id;
     return this.http.get(url).toPromise();
   }
 
   async fetch() {
     await this.http
-      .get('https://java-crypto.herokuapp.com/post/fetchMessari?limit=10000')
+      .get(`${this.url2}post/fetchMessari?limit=10000`)
       .toPromise();
   }
 
   async getCache() {
-    await this.http
-      .get('https://java-crypto.herokuapp.com/post/getCache')
-      .toPromise();
+    await this.http.get(`${this.url2}post/getCache`).toPromise();
   }
 
   async setCache() {
-    await this.http
-      .get('https://java-crypto.herokuapp.com/post/setCache')
-      .toPromise();
+    await this.http.get(`${this.url2}post/setCache`).toPromise();
   }
 
   async create(req) {
-    return this.http
-      .post('https://java-crypto.herokuapp.com/post/create', req)
-      .toPromise();
+    return this.http.post(`${this.url2}post/create`, req).toPromise();
   }
 
   async update(req) {
-    return this.http
-      .put('https://java-crypto.herokuapp.com/post/update', req)
-      .toPromise();
+    return this.http.put(`${this.url2}post/update`, req).toPromise();
   }
 }
