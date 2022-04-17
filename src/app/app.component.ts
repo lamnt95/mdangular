@@ -249,6 +249,7 @@ export class AppComponent implements OnInit {
 
   toCreate() {
     this.modelCreate.date = this.getTime(this.modelCreate.dateStr);
+    this.modelCreate.cateStr = JSON.stringify(this.modelCreate.cateStr);
 
     console.log(this.modelCreate);
 
