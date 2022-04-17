@@ -4,7 +4,8 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class ApiService {
   constructor(private http: HttpClient) {}
-  url2: any = 'https://java-crypto.herokuapp.com/';
+  // url2: any = 'https://java-crypto.herokuapp.com/';
+  url2: any = 'http://localhost:7000/';
   async getData() {
     const url = `${this.url2}post/getAll`;
     return this.http.get(url).toPromise();
