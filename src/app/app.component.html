@@ -41,6 +41,9 @@
       <option value="All">All</option>
       <option value="Messari">Messari</option>
       <option value="Manual">Manual</option>
+      <option *ngFor="let cates2it of cates2" [value]="cates2it.id">
+        {{ cates2it.id }}
+      </option>
     </select>
     <button
       style="margin-right: 10px"
