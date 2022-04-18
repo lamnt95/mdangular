@@ -183,19 +183,21 @@ export class AppComponent implements OnInit {
     switch (val) {
       case 'All':
         this.res2 = this.res;
-        break;
+        this.loading = false;
+        return;
       case 'Messari':
         this.selected = {};
         this.res2 = _.filter(this.res, (it: any = {}) => it.s == 'messari');
-        break;
+        this.loading = false;
+        return;
       case 'Manual':
         this.selected = {};
         this.res2 = _.filter(this.res, (it: any = {}) => it.s == 'manual');
-        break;
+        this.loading = false;
+        return;
       default:
-        break;
+        return;
     }
-    this.loading = false;
   }
 
   isCreate: any = false;
