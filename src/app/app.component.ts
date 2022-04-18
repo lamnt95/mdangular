@@ -257,7 +257,7 @@ export class AppComponent implements OnInit {
       name: null,
       slug: null,
       source: 'manual',
-      srcId: uuidv4(),
+      srcId: null,
       docType: 'html',
     };
   }
